@@ -1,0 +1,19 @@
+.banner{
+    margin-top: 20px;
+    background-color: #84BE78;
+}
+
+.banner-picture{
+   margin: 10px;
+}
+
+.banner-title{
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 50px;
+    margin-top: 40px;
+    color: royalblue;
+}
+
+.banner-title-col{
+    padding-top: 20px;
+}
