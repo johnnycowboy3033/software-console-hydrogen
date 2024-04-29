@@ -7,6 +7,7 @@ $(function() {
 
     consoleNotebook.clearPage();
     consoleNotebook.format.manyNewLine(6);
+
     consoleNotebook.setClass("bottom-page");
 
      //Algorithm logging
