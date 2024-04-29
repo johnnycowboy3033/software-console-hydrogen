@@ -16,6 +16,18 @@
     color:blue;
 }
 
+.space-tab{
+    margin-left: 20px;
+}
+
+.comment{
+    color:green;
+}
+
+space-tab{
+    margin-left: 40px;
+}
+
 
 .method{
     margin-top: 20px;
