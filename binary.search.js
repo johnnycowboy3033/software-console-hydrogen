@@ -19,13 +19,13 @@ function binarySearch(arr, x)
     while (t >= h) {
          mid = h + Math.floor((t - h) / 2);
          logging.push({ Action:"VARIABLES", Counter:counter, header:h, midpoint:mid, tail:t });
-  
-        logging.push({Action:"MESSAGE", Counter:counter++, message:`If the element is present at the middle itself`});
+
+    
         if (arr[mid] == x){
+            logging.push({Action:"MESSAGE", Counter:counter++, message:`If the element is present at the middle itself`});
             return mid;
         }
-            
-
+        
         
         if (arr[mid] > x){
             logging.push({Action:"MESSAGE", Counter:counter++, message:`If element is smaller than mid, then it can only be present in left subarray`});
