@@ -17,12 +17,16 @@ function binarySearch(arr, x)
     let mid;
 
     while (t >= h) {
+        logging.push({  Action:"DIVIDER" });
          mid = h + Math.floor((t - h) / 2);
          logging.push({ Action:"VARIABLES", Counter:counter, header:h, midpoint:mid, tail:t });
+
+         logging.push({Action:"ARRAY",presentArray:arr.slice(),indexes: [h,mid,t]});
 
     
         if (arr[mid] == x){
             logging.push({Action:"MESSAGE", Counter:counter++, message:`If the element is present at the middle itself`});
+            logging.push({Action:"RESULTS", Counter:counter++, message:`The index is ${mid} for target ${x}`});
             return mid;
         }
         
@@ -34,6 +38,8 @@ function binarySearch(arr, x)
             logging.push({Action:"MESSAGE", Counter:counter++, message:`Else the element can only be present in right subarray`});
             h = mid + 1;
         }
+
+        
             
     }
   

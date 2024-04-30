@@ -78,3 +78,8 @@
 .variable-group{
     font-size: 30px;
 }
+
+.results{
+    color: red;
+    font-size: 50px;
+}
