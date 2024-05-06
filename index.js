@@ -3,10 +3,9 @@ $(function() {
     let consoleNotebook = new ConsoleNotebook(['Head','Midpoint','Tail']);
 
     //Webpage site layout
-    consoleNotebook.insertCodeBlock('code-1',0,43);
+    consoleNotebook.insertCodeBlock('code-section-1',0,43);
 
     consoleNotebook.clearPage();
-    consoleNotebook.format.manyNewLine(6);
 
     consoleNotebook.setClass("bottom-page");
 
@@ -14,7 +13,7 @@ $(function() {
      function Algorithm(arr,x){
         let result = binarySearch(arr, x);
 
-        consoleNotebook.insertSteps("steps-algorithm",logging);
+        consoleNotebook.insertSteps("steps-algorithm-1",logging);
         
 
     };
