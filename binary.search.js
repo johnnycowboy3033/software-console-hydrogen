@@ -7,7 +7,9 @@
 let logging;
 let counter;
 
-let all = "steps-algorithm-1";
+let all = "steps-1";
+let stop = "steps-2";
+let smaller = "steps-3";
 
 function binarySearch(arr, x)
 {  
@@ -29,15 +31,23 @@ function binarySearch(arr, x)
 
     
         if (arr[mid] == x){
+            logging.push({  Action:"DIVIDER" , Groups:[stop]});
             logging.push({Action:"MESSAGE", Counter:counter++, Groups:[all],  message:`If the element is present at the middle itself`});
-            logging.push({Action:"RESULTS", Counter:counter++, Groups:[all], message:`The index is ${mid} for target ${x}`});
+            logging.push({Action:"MESSAGE", Counter:counter++, Groups:[stop],  message:`The arr[mid] is equal to ${arr[mid]} . The mid is equal to ${mid}`});
+            logging.push({Action:"RESULTS", Counter:counter++, Groups:[all,stop], message:`The index is ${mid} for target ${x}`});
             return mid;
         }
         
         
         if (arr[mid] > x){
             logging.push({Action:"MESSAGE", Counter:counter++, Groups:[all], message:`If element is smaller than mid, then it can only be present in left subarray`});
+            logging.push({Action:"MESSAGE", Counter:counter++, Groups:[smaller],  message:`The arr[mid] is equal to ${arr[mid]} . The mid is equal to ${mid}`});
+            logging.push({ Action:"VARIABLES", Counter:counter, Groups:[smaller], header:h, midpoint:mid, tail:t });
             t = mid - 1;
+            logging.push({Action:"MESSAGE", Counter:counter++, Groups:[smaller],  message:`The new Tail is at the index of ${t}`});
+            logging.push({ Action:"VARIABLES", Counter:counter, Groups:[smaller], header:h, midpoint:mid, tail:t });
+            let subarray = arr.slice(0,t);
+            logging.push({Action:"MESSAGE", Counter:counter++, Groups:[smaller],  message:`The new Left Sub Array is ${subarray.join()}`});
         }else{
             logging.push({Action:"MESSAGE", Counter:counter++, Groups:[all], message:`Else the element can only be present in right subarray`});
             h = mid + 1;
